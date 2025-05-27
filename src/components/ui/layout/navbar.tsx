@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -7,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function Navbar() {
   return (
     <header className="w-full max-w-[1920px] px-12 mx-auto">
-      <div className="container flex items-center justify-between mx-auto lg:py-12 py-8">
+      <div className="container max-w-[1560px] mx-auto flex items-center justify-between w-full lg:py-12 py-8">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/icons/rian-logo.svg" alt="Rian Logo" width={32} height={32} className="lg:w-18 lg:h-20 w-10 h-12 object-contain"/>

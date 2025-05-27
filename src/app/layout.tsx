@@ -30,7 +30,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${onest.variable} antialiased bg-[#1D1D1D]`}>
+      <body className={`${onest.variable} antialiased bg-[#1D1D1D] grain-texture`}>
         <Navbar />
         {children}
         <Footer />
