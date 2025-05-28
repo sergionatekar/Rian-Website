@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/layout/navbar";
-import Footer from "@/components/ui/layout/footer";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
 // Load Onest font
 const onest = Onest({
   variable: "--font-onest",
@@ -30,7 +30,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${onest.variable} antialiased bg-[#1D1D1D] grain-texture`}>
+      <body className={`${onest.variable} antialiased bg-[#1D1D1D] grain-texture lg:pb-12`}>
         <Navbar />
         {children}
         <Footer />
