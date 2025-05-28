@@ -1,6 +1,8 @@
 import Features from "@/components/home/features";
 import HeroSection from "@/components/home/hero-section";
 import Clients from "@/components/home/clients";
+import DemoHome from "@/components/home/demo-home";
+import PlatformPromo from "@/components/home/platform-promo";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <HeroSection />
       <Features />
       <Clients />
+      <DemoHome />
+      <PlatformPromo />
     </main>
   );
 }

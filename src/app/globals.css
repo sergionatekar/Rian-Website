@@ -41,6 +41,18 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-shine: shine var(--duration) infinite linear;
+  @keyframes shine {
+  0% {
+    background-position: 0% 0%;
+    }
+  50% {
+    background-position: 100% 100%;
+    }
+  to {
+    background-position: 0% 0%;
+    }
+  }
 }
 
 :root {
@@ -137,7 +149,7 @@ body{
   background-image: url('/images/grain.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.7;
+  opacity: 0.45;
   mix-blend-mode: soft-light;
   pointer-events: none;
   z-index: 10;

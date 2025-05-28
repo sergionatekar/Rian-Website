@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="text-white p-8 lg:rounded-[48px] rounded-3xl max-w-[1820px] mx-auto lg:px-12 px-6 relative overflow-hidden bg-[url('/images/footer-bg-mobile.png')] lg:bg-[url('/images/footer-bg-web.png')] bg-cover bg-no-repeat bg-center pointer-events-none">
+    <footer className="text-white p-8 lg:rounded-[48px] rounded-3xl max-w-[1820px] mx-auto lg:px-12 px-6 relative overflow-hidden bg-[url('/images/footer-bg-mobile.png')] lg:bg-[url('/images/footer-bg-web.png')] bg-cover bg-no-repeat bg-center">
       <div className="relative z-10 flex flex-col lg:flex-row gap-8 mb-12 w-full min-h-[212px]">
         {/* Logo & description */}
         <div className="min-h-[170px] flex flex-col justify-start xl:min-w-[775px]">
@@ -106,7 +106,7 @@ export default function Footer() {
 
       {/* Address Cards */}
       <div className="grid lg:grid-cols-2 gap-8 mb-8">
-        <div className="bg-[#A6A6A6]/5 rounded-[24px] lg:p-8 p-4 flex items-center gap-4">
+        <div className="bg-[#A6A6A6]/5 rounded-[24px] h-[236px] lg:h-auto lg:p-8 p-4 flex items-center gap-4">
           <Image
             src="/icons/india-map.svg"
             alt="India Map"
@@ -124,7 +124,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div className="bg-[#A6A6A6]/5 rounded-[24px] lg:p-8 p-4 flex items-center gap-4">
+        <div className="bg-[#A6A6A6]/5 rounded-[24px] h-[236px] lg:h-auto lg:p-8 p-4 flex items-center gap-4">
           <Image
             src="/icons/japan-map.svg"
             alt="Japan Map"
