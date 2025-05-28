@@ -9,9 +9,12 @@ import {
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="w-full max-w-[1920px] px-4 sm:px-8 md:px-12 mx-auto">
@@ -22,11 +25,41 @@ export default function Navbar() {
         </Link>
 
         {/* Nav Links (Desktop) */}
-        <nav className="hidden xl:flex text-lg text-white items-center space-x-10">
-          <Link href="/platform" className="hover:text-white/80 transition">Platform</Link>
-          <Link href="/vendor-registration" className="hover:text-white/80 transition">Vendor Registration</Link>
-          <Link href="/company" className="hover:text-white/80 transition">Company</Link>
-          <Link href="/rian-academy" className="font-medium transition bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80">Rian Academy</Link>
+        <nav className="hidden xl:flex text-lg text-white items-center space-x-10 relative">
+          {[
+            { href: "/platform", label: "Platform" },
+            { href: "/vendor-registration", label: "Vendor Registration" },
+            { href: "/company", label: "Company" },
+            { href: "/rian-academy", label: "Rian Academy", className: "font-medium bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80", isGradient: true },
+          ].map((link) => {
+            const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+            return (
+              <div key={link.href} className="relative flex flex-col items-center">
+                <Link
+                  href={link.href}
+                  className={
+                    link.className
+                      ? `${link.className} hover:text-white/80 transition`
+                      : "hover:text-white/80 transition"
+                  }
+                >
+                  {link.label}
+                </Link>
+                {/* Animated underline for active link */}
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      layoutId="navbar-underline"
+                      className={`absolute -bottom-2 left-0 right-0 h-[3px] rounded-full ${link.isGradient ? 'bg-gradient-to-r from-[#67F5C8] to-[#ADFF15]' : 'bg-white'}`}
+                      initial={{ opacity: 0, scaleX: 0.5, x: 20 }}
+                      animate={{ opacity: 1, scaleX: 1, x: 0, transition: { type: 'spring', stiffness: 350, damping: 30 } }}
+                      exit={{ opacity: 0, scaleX: 0.5, x: -20, transition: { duration: 0.18 } }}
+                    />
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </nav>
 
         {/* Actions (Desktop) */}
