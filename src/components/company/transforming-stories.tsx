@@ -37,7 +37,7 @@ export default function TransformingStories() {
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {cards.map((card, idx) => (
+        {cards.map((card) => (
           <div
             key={card.title}
             className="group relative flex flex-col items-center text-center bg-[#7C7C7C]/5 border-[1.5px] border-[#FFFFFF]/10 rounded-3xl px-8 py-10 shadow-[0_18px_44px_0_rgba(0,0,0,0.2)] overflow-hidden transition-transform bg-cover bg-center bg-no-repeat"
