@@ -1,6 +1,9 @@
 import CompanyHero from "@/components/company/company-hero";
 import Impact from "@/components/company/impact";
 import Progress from "@/components/company/progress";
+import TeamSection from "@/components/company/team";
+import TransformingStories from "@/components/company/transforming-stories";
+import Testimonials from "@/components/company/testimonials";
 
 export default function Home() {
   return (
@@ -8,6 +11,9 @@ export default function Home() {
       <CompanyHero />
       <Impact />
       <Progress />
+      <TransformingStories />
+      <Testimonials />
+      <TeamSection />
     </main>
   );
 }

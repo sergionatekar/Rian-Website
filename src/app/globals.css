@@ -152,5 +152,5 @@ body{
   opacity: 0.45;
   mix-blend-mode: soft-light;
   pointer-events: none;
-  z-index: 10;
+  z-index: 998;
 }
