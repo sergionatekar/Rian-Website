@@ -142,9 +142,9 @@ export default function Footer() {
       {/* Bottom line */}
       <div className="flex flex-col lg:flex-row justify-between lg:items-center text-base text-[#A1A1A1] mb-6">
         <div className="flex gap-3 mb-3 md:mb-0">
-          <Link href="#">Terms of use</Link>
+          <Link href="/terms-of-use">Terms of use</Link>
           <span>•</span>
-          <Link href="#">Privacy Policy</Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
         </div>
         <p>© 2025 Rikaian Technology Pvt. Ltd.</p>
       </div>

@@ -1,8 +1,34 @@
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import React, { useRef } from "react";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.13,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const card = {
+  hidden: { opacity: 0, y: 32, filter: "blur(8px)" },
+  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { type: "spring", stiffness: 120, damping: 18 } },
+};
 
 export default function Features() {
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { once: true, amount: 0.3 });
+
   return (
-    <section className="max-w-[1720px] mx-auto lg:px-12 my-4 lg:my-16">
+    <motion.section
+      ref={sectionRef}
+      className="max-w-[1720px] mx-auto lg:px-12 my-4 lg:my-16"
+      variants={container}
+      initial="hidden"
+      animate={inView ? "show" : "hidden"}
+    >
       <h2 className="text-center text-white lg:text-5xl text-[32px] font-light mb-12 tracking-tight">
         AI + Human hybrid model for <br className="hidden lg:block" />
         emotion-aware output
@@ -10,7 +36,10 @@ export default function Features() {
 
       <div className="flex xl:flex-row flex-col gap-6 xl:min-h-[690px] text-white">
         {/* Card 1 */}
-        <div className="relative bg-[#7C7C7C]/5 xl:max-w-[406px] w-full border border-[#FFFFFF]/10 p-4 md:p-8 rounded-3xl flex flex-col justify-end items-start overflow-hidden min-h-[340px] shadow-[0_18px_44px_0_rgba(0,0,0,0.2)]">
+        <motion.div
+          className="relative bg-[#7C7C7C]/5 xl:max-w-[406px] w-full border border-[#FFFFFF]/10 p-4 md:p-8 rounded-3xl flex flex-col justify-end items-start overflow-hidden min-h-[340px] shadow-[0_18px_44px_0_rgba(0,0,0,0.2)]"
+          variants={card}
+        >
           <div className="relative z-10">
             <h3 className="text-[32px] lg:text-[82px] font-light mb-2">30+</h3>
             <p className="text-2xl font-light mb-6 max-w-[50%] md:max-w-full">AI dubbing languages</p>
@@ -72,10 +101,13 @@ export default function Features() {
             className="absolute inset-0 object-cover rounded-3xl pointer-events-none z-20"
             priority={false}
           />
-        </div>
+        </motion.div>
 
         {/* Card 2 */}
-        <div className="relative bg-[#7C7C7C]/5 xl:max-w-[587px] min-h-[180px] w-full border border-[#FFFFFF]/10 md:p-8 p-4 rounded-3xl flex flex-col justify-end overflow-hidden md:min-h-[340px] shadow-[0_18px_44px_0_rgba(0,0,0,0.2)]">
+        <motion.div
+          className="relative bg-[#7C7C7C]/5 xl:max-w-[587px] min-h-[180px] w-full border border-[#FFFFFF]/10 md:p-8 p-4 rounded-3xl flex flex-col justify-end overflow-hidden md:min-h-[340px] shadow-[0_18px_44px_0_rgba(0,0,0,0.2)]"
+          variants={card}
+        >
           <div className="relative z-50 lg:pb-6 ">
             <h3 className="text-3xl lg:text-[82px] font-light">60+</h3>
             <p className="text-2xl font-light">Document translation</p>
@@ -113,12 +145,15 @@ export default function Features() {
             className="absolute block xl:hidden inset-0 object-cover rounded-3xl pointer-events-none z-0"
             priority={false}
           />
-        </div>
+        </motion.div>
 
         {/* Cards 3 & 4 stacked */}
         <div className="flex flex-col gap-6 w-full xl:max-w-[472px]">
           {/* Card 3 */}
-          <div className="relative bg-[#7C7C7C]/5 border border-[#FFFFFF]/10 md:p-8 p-4 rounded-3xl flex flex-col justify-between overflow-hidden min-h-[210px] xl:min-h-[170px] xl:flex-1 shadow-[0_18px_44px_0_rgba(0,0,0,0.2)]">
+          <motion.div
+            className="relative bg-[#7C7C7C]/5 border border-[#FFFFFF]/10 md:p-8 p-4 rounded-3xl flex flex-col justify-between overflow-hidden min-h-[210px] xl:min-h-[170px] xl:flex-1 shadow-[0_18px_44px_0_rgba(0,0,0,0.2)]"
+            variants={card}
+          >
             <div className="relative z-10 flex flex-col h-full w-[80%]">
               <div className="flex w-full justify-between gap-4">
                 {[5, 6, 7, 8].map((num) => (
@@ -152,9 +187,12 @@ export default function Features() {
               className="absolute inset-0 object-cover rounded-3xl pointer-events-none z-20"
               priority={false}
             />
-          </div>
+          </motion.div>
           {/* Card 4 */}
-          <div className="relative bg-[#7C7C7C]/5 border border-[#FFFFFF]/10 p-4 md:p-8 rounded-3xl flex flex-col justify-between overflow-hidden md:min-h-[170px] flex-1 shadow-[0_18px_44px_0_rgba(0,0,0,0.2)]">
+          <motion.div
+            className="relative bg-[#7C7C7C]/5 border border-[#FFFFFF]/10 p-4 md:p-8 rounded-3xl flex flex-col justify-between overflow-hidden md:min-h-[170px] flex-1 shadow-[0_18px_44px_0_rgba(0,0,0,0.2)]"
+            variants={card}
+          >
             <div className="relative z-10 font-light text-white flex flex-col justify-center lg:justify-end h-full ">
               <h3 className="text-[32px] lg:text-[82px]">97%</h3>
               <p className="font-light text-base lg:text-2xl">
@@ -176,9 +214,9 @@ export default function Features() {
               className="absolute inset-0 object-cover rounded-3xl pointer-events-none z-20"
               priority={false}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
