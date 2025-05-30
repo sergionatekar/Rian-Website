@@ -38,11 +38,12 @@ export default function HeroSection() {
         {/* CTA Button */}
         <div className="flex justify-center">
           <Link
-            href="/platform"
+            href="https://calendly.com/aryan-tiwari-rian/30min?month=2025-06"
+            target="_blank"
             className="w-full lg:w-fit"
           >
             <Button variant={"default"} className="md:w-fit w-full h-[64px] md:h-auto">
-            Explore Platform
+            Book a Demo
             </Button>
           </Link>
         </div>

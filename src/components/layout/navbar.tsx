@@ -64,7 +64,7 @@ export default function Navbar() {
 
         {/* Actions (Desktop) */}
         <div className="hidden xl:flex items-center space-x-3">
-          <Link href="/login">
+          <Link href="https://app.rian.io/login" target="_blank">
             <Button variant="outline">Login</Button>
           </Link>
           <Link href="/book-demo">
@@ -95,7 +95,7 @@ export default function Navbar() {
               {/* Overlay Image */}
               
               {/* Menu Content */}
-              <div className="relative z-10 flex flex-col py-8 px-6 gap-2 min-h-[60vh] rounded-2xl">
+              <div className="relative z-10 flex flex-col py-8 px-6 gap-2  rounded-2xl">
                 <nav className="flex flex-col gap-8 lg:text-xl text-lg text-white">
                   <Link href="/platform" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Platform</Link>
                   <Link href="https://app.rian.io/registervendor" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Vendor Registration</Link>
@@ -103,11 +103,11 @@ export default function Navbar() {
                   <Link href="https://academy.rian.io/" className="font-medium transition bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80" onClick={() => setOpen(false)}>Rian Academy</Link>
                 </nav>
                 <div className="flex-1" />
-                <div className="flex flex-col items-center gap-3 w-full">
-                  <Link href="/login" className="w-full" onClick={() => setOpen(false)}>
+                <div className="flex flex-col items-center gap-3 w-full mt-6">
+                  <Link href="https://app.rian.io/login" target="_blank" className="w-full" onClick={() => setOpen(false)}>
                     <Button variant="outline" className="w-full h-[46px] bg-[#FFFFFF1A] border border-[#373737]">Login</Button>
                   </Link>
-                  <Link href="/book-demo" className="w-full" onClick={() => setOpen(false)}>
+                  <Link href="https://calendly.com/aryan-tiwari-rian/30min?month=2025-06" target="_blank" className="w-full" onClick={() => setOpen(false)}>
                     <Button className="w-full h-[46px]">Book a Demo</Button>
                   </Link>
                 </div>

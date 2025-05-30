@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "../ui/button";
+import DemoDialog from "@/components/dialogs/DemoDialog";
+import React, { useState } from "react";
 
 export default function PlatformPromo() {
+  const [open, setOpen] = useState(false);
   return (
-    <section className="w-full mb-12 lg:mb-0 lg:mt-12">
+    <section className="w-full mb-12 lg:mb-0 mt-12">
       {/* XL+ Layout */}
       <div className="hidden rounded-2xl overflow-hidden lg:rounded-[48px] bg-[#FFFFFF]/5 text-white lg:flex w-full lg:flex-row">
         {/* Left Section */}
@@ -22,14 +24,12 @@ export default function PlatformPromo() {
           </div>
 
           <div className="flex gap-4 mt-10">
-            <Link href="/demo">
-              <Button>Launch Interactive Demo</Button>
-            </Link>
-            <Link href="/platform">
+            <Button onClick={() => setOpen(true)}>Launch Interactive Demo</Button>
+            <a href="/platform">
               <Button variant="outline" className="border-[#8A8A8A]">
                 Explore Platform
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -68,16 +68,17 @@ export default function PlatformPromo() {
         </div>
 
         <div className="flex flex-col gap-4 px-6 mt-8 pb-12">
-          <Link href="/demo" >
-            <Button className="w-full md:w-fit py-8">Launch Interactive Demo</Button>
-          </Link>
-          <Link href="/platform">
+          <Button className="w-full md:w-fit py-8" onClick={() => setOpen(true)}>
+            Launch Interactive Demo
+          </Button>
+          <a href="/platform">
             <Button variant="outline" className="border-[#8A8A8A] w-full md:w-fit py-8">
               Explore Platform
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
+      <DemoDialog open={open} onOpenChange={setOpen} />
     </section>
   );
 }

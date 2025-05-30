@@ -11,14 +11,11 @@ export default function Footer() {
             <Image
               src="/icons/rian-logo-footer.svg"
               alt="Rian Logo"
-              width={55}
+              width={200}
               height={55}
               priority
-              className="lg:w-[55px] w-auto h-auto"
+              className="lg:w-[188px] w-auto h-auto"
             />
-            <span className="text-[28px] font-medium tracking-widest">
-              RIAN
-            </span>
           </div>
           <p className="text-base font-light text-[A7A7A7] lg:max-w-[300px] xl:max-w-[775px] mt-6">
             At Rian, we specialize in video localization and document
@@ -75,6 +72,7 @@ export default function Footer() {
               <Link
                 href="https://in.linkedin.com/company/rian-io"
                 aria-label="Linkedin"
+                target="_blank"
               >
                 <Image
                   src="/icons/linkedin.svg"
@@ -87,6 +85,7 @@ export default function Footer() {
               <Link
                 href="https://www.youtube.com/channel/UCNyfv71KD7roDPonTcKDnFQ"
                 aria-label="YouTube"
+                target="_blank"
               >
                 <Image
                   src="/icons/youtube.svg"
@@ -157,6 +156,7 @@ export default function Footer() {
           <Link
             href="https://in.linkedin.com/company/rian-io"
             aria-label="Linkedin"
+            target="_blank"
           >
             <Image
               src="/icons/linkedin.svg"
@@ -169,6 +169,7 @@ export default function Footer() {
           <Link
             href="https://www.youtube.com/channel/UCNyfv71KD7roDPonTcKDnFQ"
             aria-label="YouTube"
+            target="_blank"
           >
             <Image
               src="/icons/youtube.svg"

@@ -10,6 +10,7 @@ import DocumentFeatures from '@/components/document-translation/document-feature
 import DocumentBenefits from '@/components/document-translation/document-benefits';
 import DocumentUseCases from '@/components/document-translation/document-use-cases';
 import React, { useEffect, useState } from 'react';
+import MediaPros from '@/components/media-translation/media-pros';
 
 export default function Home() {
   const [tab, setTab] = useState('media');
@@ -30,13 +31,14 @@ export default function Home() {
     <main className="w-full h-full max-w-[1720px] mx-auto px-4 py-4 lg:px-12 lg:py-12">
       <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
         <TabsList className="mb-8 w-full max-w-[500px] rounded-full p-2 h-full mx-auto bg-[#FFFFFF]/5 border border-[#FFFFFF]/5 grid grid-cols-2">
-          <TabsTrigger value="media" className='text-lg rounded-full h-full text-white py-3 px-4 data-[state=active]:text-[#2C2C2C]'>Media Translation</TabsTrigger>
-          <TabsTrigger value="document" className='text-lg rounded-full h-full text-white p-4 data-[state=active]:text-[#2C2C2C]'>Document Translation</TabsTrigger>
+          <TabsTrigger value="media" className='text-xs md:text-lg rounded-full h-full text-white py-3 px-4 data-[state=active]:text-[#2C2C2C]'>Media Translation</TabsTrigger>
+          <TabsTrigger value="document" className='text-xs md:text-lg rounded-full h-full text-white py-3 px-4 data-[state=active]:text-[#2C2C2C]'>Document Translation</TabsTrigger>
         </TabsList>
         <TabsContent value="media">
           <MediaHero />
           <MediaFeatures />
           <MediaBenefits />
+          <MediaPros />
           <PlatformCTA />
         </TabsContent>
         <TabsContent value="document">
