@@ -15,9 +15,9 @@ export default function MediaHero() {
         <Image
           src="/images/platform/media-translation-hero.png"
           alt="Media translation dashboard preview"
-          width={1400}
-          height={700}
-          className="w-full h-full"
+          width={1512}
+          height={948}
+          className="w-full h-full object-contain"
           priority
         />
       </div>

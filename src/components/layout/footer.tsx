@@ -38,14 +38,11 @@ export default function Footer() {
                   <Link href="/platform">Platform</Link>
                 </li>
                 <li>
-                  <Link href="/vendor-management">Vendor Registration</Link>
-                </li>
-                <li>
-                  <Link href="/pricing">Pricing</Link>
+                  <Link href="https://app.rian.io/registervendor">Vendor Registration</Link>
                 </li>
                 <li>
                   <Link
-                    href="/rian-academy"
+                    href="https://academy.rian.io/"
                     className="bg-gradient-to-br from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent"
                   >
                     Rian Academy

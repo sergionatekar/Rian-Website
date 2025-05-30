@@ -28,9 +28,9 @@ export default function Navbar() {
         <nav className="hidden xl:flex text-lg text-white items-center space-x-10 relative">
           {[
             { href: "/platform", label: "Platform" },
-            { href: "/vendor-registration", label: "Vendor Registration" },
+            { href: "https://app.rian.io/registervendor", label: "Vendor Registration" },
             { href: "/company", label: "Company" },
-            { href: "/rian-academy", label: "Rian Academy", className: "font-medium bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80", isGradient: true },
+            { href: "https://academy.rian.io/", label: "Rian Academy", className: "font-medium bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80", isGradient: true },
           ].map((link) => {
             const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
             return (
@@ -98,9 +98,9 @@ export default function Navbar() {
               <div className="relative z-10 flex flex-col py-8 px-6 gap-2 min-h-[60vh] rounded-2xl">
                 <nav className="flex flex-col gap-8 lg:text-xl text-lg text-white">
                   <Link href="/platform" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Platform</Link>
-                  <Link href="/vendor-registration" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Vendor Registration</Link>
+                  <Link href="https://app.rian.io/registervendor" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Vendor Registration</Link>
                   <Link href="/company" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Company</Link>
-                  <Link href="/rian-academy" className="font-medium transition bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80" onClick={() => setOpen(false)}>Rian Academy</Link>
+                  <Link href="https://academy.rian.io/" className="font-medium transition bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80" onClick={() => setOpen(false)}>Rian Academy</Link>
                 </nav>
                 <div className="flex-1" />
                 <div className="flex flex-col items-center gap-3 w-full">
