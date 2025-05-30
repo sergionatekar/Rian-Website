@@ -23,9 +23,9 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1, scale: 1, filter: 'blur(0px)' }}
         exit={{ y: -32, opacity: 0, scale: 0.98, filter: 'blur(8px)' }}
         transition={{ type: 'spring', stiffness: 120, damping: 18, delay: 0.12 }}
-        className="w-full max-w-[1920px] px-4 sm:px-8 md:px-12 mx-auto"
+        className="w-full max-w-[1920px] px-4 sm:px-8 md:px-12 mx-auto flex items-center justify-center"
       >
-        <div className="container max-w-[1560px] mx-auto flex items-center justify-between w-full lg:py-12 py-8">
+        <div className="container flex items-center justify-between w-full lg:py-12 py-8">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image src="/icons/rian-logo.svg" alt="Rian Logo" width={32} height={32} className="lg:w-18 lg:h-20 w-10 h-12 object-contain" />
@@ -37,6 +37,7 @@ export default function Navbar() {
               { href: "/platform", label: "Platform" },
               { href: "https://app.rian.io/registervendor", label: "Vendor Registration" },
               { href: "/company", label: "Company" },
+              { href: "/careers", label: "Careers" },
               { href: "https://academy.rian.io/", label: "Rian Academy", className: "font-medium bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80", isGradient: true },
             ].map((link) => {
               const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
@@ -107,6 +108,7 @@ export default function Navbar() {
                     <Link href="/platform" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Platform</Link>
                     <Link href="https://app.rian.io/registervendor" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Vendor Registration</Link>
                     <Link href="/company" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Company</Link>
+                    <Link href="/careers" className="hover:text-white/80 transition" onClick={() => setOpen(false)}>Careers</Link>
                     <Link href="https://academy.rian.io/" className="font-medium transition bg-gradient-to-r from-[#67F5C8] to-[#ADFF15] bg-clip-text text-transparent hover:from-[#67F5C8]/80 hover:to-[#ADFF15]/80" onClick={() => setOpen(false)}>Rian Academy</Link>
                   </nav>
                   <div className="flex-1" />
