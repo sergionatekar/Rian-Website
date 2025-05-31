@@ -75,7 +75,7 @@ export default function Navbar() {
             <Link href="https://app.rian.io/login" target="_blank">
               <Button variant="outline">Login</Button>
             </Link>
-            <Link href="/book-demo">
+            <Link href="https://calendly.com/aryan-tiwari-rian/30min?month=2025-06" target="_blank">
               <Button>Book a Demo</Button>
             </Link>
           </div>
