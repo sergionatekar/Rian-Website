@@ -7,15 +7,22 @@ import TeamSection from "@/components/company/team";
 import TransformingStories from "@/components/company/transforming-stories";
 import Testimonials from "@/components/company/testimonials";
 import { InViewFade } from "@/components/ui/InViewFade";
+import { useRef } from 'react';
 
 export default function Home() {
+  const impactRef = useRef<HTMLDivElement>(null);
+  const handleLearnMore = () => {
+    impactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <main className="w-full h-full max-w-[1720px] mx-auto px-4 py-4 lg:px-12 lg:py-12">
       <InViewFade>
-        <CompanyHero />
+        <CompanyHero onLearnMore={handleLearnMore} />
       </InViewFade>
       <InViewFade>
-        <Impact />
+        <div ref={impactRef}>
+          <Impact />
+        </div>
       </InViewFade>
       <InViewFade>
         <Progress />

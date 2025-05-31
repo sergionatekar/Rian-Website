@@ -154,3 +154,44 @@ body{
   pointer-events: none;
   z-index: 998;
 }
+
+/* Sleek, premium, minimal scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #444 #232323;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #232323 60%, #67F5C8 100%);
+  border-radius: 8px;
+  min-height: 40px;
+  transition: background 0.2s;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(120deg, #232323 40%, #ADFF15 100%);
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* For scrollable containers */
+*::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #232323 60%, #67F5C8 100%);
+  border-radius: 8px;
+  min-height: 40px;
+  transition: background 0.2s;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(120deg, #232323 40%, #ADFF15 100%);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}

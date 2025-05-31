@@ -17,8 +17,8 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: `"Rian Contact" <${process.env.SMTP_USER}>`,
-      to: ['pratik.desai@neuralarc.ai'],
-      // cc: ['anand@rian.io', 'aniket.tapre@rian.io'],
+      to: ['pmo@rian.io', 'ketki@rian.io'],
+      cc: ['anand@rian.io', 'aniket.tapre@rian.io'],
       subject: 'New Quote/Demo Request',
       html: `
         <div style="min-height: fit-content; padding: 40px 0; font-family: 'Onest', 'Segoe UI', Arial, sans-serif;">
@@ -33,8 +33,7 @@ export async function POST(req: NextRequest) {
               <div style="margin-bottom: 16px;"><span style="color: #67F5C8; font-weight: 500;">Email:</span> <span style="color: #fff;">${email}</span></div>
               <div style="margin-bottom: 16px;"><span style="color: #67F5C8; font-weight: 500;">Phone:</span> <span style="color: #fff;">${phoneCode} ${phone}</span></div>
               <div style="margin-bottom: 0;"><span style="color: #67F5C8; font-weight: 500;">Goal:</span> <span style="color: #fff;">${goal}</span></div>
-            </div>
-            
+            </div>  
           </div>
         </div>
       `,
