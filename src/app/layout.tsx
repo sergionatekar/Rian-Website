@@ -3,6 +3,7 @@ import { Onest } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import Script from "next/script";
 // Load Onest font
 const onest = Onest({
   variable: "--font-onest",
@@ -23,12 +24,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
-          rel="stylesheet"
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-45WRL3FEVP"
+          strategy="afterInteractive"
+          async
         />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-45WRL3FEVP');
+          `}
+        </Script>
       </head>
       <body className={`${onest.variable} antialiased bg-[#1D1D1D] grain-texture lg:pb-12`}>
         <Navbar />
